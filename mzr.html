@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RDMKIT | MZR</title>
+    <meta name="description" content="A multiple measure visualization tool for setting type online.">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:100,100i,400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="/stylus.48aea968.css">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.9df8b7db.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.9b5ad832.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72.ccff3220.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144.787436d6.png">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/apple-touch-icon-60x60.d7edc343.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/apple-touch-icon-120x120.f92264fe.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/apple-touch-icon-76x76.fd8a0936.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152.58c164fa.png">
+    <link rel="icon" type="image/png" href="/favicon-196x196.39f372cc.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/favicon-96x96.f04b0db9.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-32x32.43b30f10.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.442c5440.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-128.a00f5359.png" sizes="128x128">
+    <meta name="application-name" content=" ">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.f0bb6b9f.png">
+    <meta name="msapplication-square70x70logo" content="/mstile-70x70.569011a3.png">
+    <meta name="msapplication-square150x150logo" content="/mstile-150x150.8387d5d7.png">
+    <meta name="msapplication-wide310x150logo" content="/mstile-310x150.3f488701.png">
+    <meta name="msapplication-square310x310logo" content="/mstile-310x310.8504e6e7.png">
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-24190198-41"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+  dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+gtag('config', 'UA-24190198-41');</script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navtop"><a class="logo" href="/">RDMKIT</a><span class="tagline">Web typesetting tools</span>
+        <div class="nav"><a href="/cpl.html">cpl</a><a href="/mzr.html">mzr</a><a href="/vrt.html">vrt</a><a href="/rdm.html">rdm</a><a href="/all.html">all</a><a href="/mor.html">mor</a><a href="/fun.html">fun</a><a href="/err.html">err</a></div>
+      </nav>
+      <main class="main__column">
+        <hgroup>
+          <h2 class="main__heading">MZR</h2>
+          <h3 class="main__subhead">Install the multiple measure visualization tool</h3>
+        </hgroup>
+        <p><code class="language-bash">npm install rdmkit-mzr --save-dev</code></p>
+        <p>This will install MZR as a devDependency. </p>
+        <h3 class="main__subbold">Quick setup</h3>
+        <pre class="language-js"><code>import mzr from "rdmkit-mzr";
+mzr();
+</code></pre>
+        <p>This will get you going, but you will have to comment it out or remove it for production builds. Unless, you want it in your build code.</p>
+        <h3 class="main__subbold">Conditional setup</h3>
+        <pre class="language-js"><code>if (process.env.NODE_ENV === "development") {
+  var mzr = require("rdmkit-mzr");
+  mzr();
+}
+</code></pre>
+        <p>If you are using environment variables, this will only enable MZR while in development. It will not be included in the build. If you happen to use <a href="https://parceljs.org/env.html">ParcelJS</a> <code class="language-js">process.env.NODE_ENV === "development"</code> is set for you on all non-build runs. And it will also set <code class="language-js">process.env.NODE_ENV === "production"</code> when you do build. Super handy.</p>
+        <h3 class="main__subbold">Usage</h3>
+        <p>Pick any element in your web page and give it a data attribute of <code class="language-html">data-mzr=""</code>. Assign this attribute any number. You can assign multiple numbers separated by a `/` to indicate multiple character counts in one line of text. Peep the example below.</p>
+        <pre class="language-html"><code>&lt;p data-mzr=&quot;35/55/75&quot;&gt;Cardinals arch gooey butter cake south grand muny nelly mississippi river, CWE barnes-jewish hospital toasted ravioli anheuser-busch neon sign. Lindbergh St. Louis science center and zoo turtle park soulard bowling riverfront times. Delmar loop blueberry hill tivoli COCA moonrise hotel RAC answers.com washington university forest park spanish pavilion art hill.&lt;/p&gt;
+</code></pre>
+        <h3 class="main__subbold">Output</h3>
+        <p data-mzr="35/55/75">Cardinals arch gooey butter cake south grand muny nelly mississippi river, CWE barnes-jewish hospital toasted ravioli anheuser-busch neon sign. Lindbergh St. Louis science center and zoo turtle park soulard bowling riverfront times. Delmar loop blueberry hill tivoli COCA moonrise hotel RAC answers.com washington university forest park spanish pavilion art hill.</p>
+        <p>Above, the first 35 characters have been highlighted in magenta. The magenta and yellow highlighted characters show the first 55 characters. The magenta, yellow and green highlighted characters show the first 75 characters. Everything in blue is outside the bounds of the top limit specified.</p>
+        <p>I usaully put this on a main paragraph at the beginning of developing a site. It helps me visualize multiple line-lengths at once. If I have to define columns with <code class="language-css">px</code> then the colors help me locate the desired characters-per-line while I use the inspector to adjust the column width. And even after that is done MZR helps me to visualize my breakpoints without having to reduce the window's width.</p>
+      </main>
+      <script src="/internal.3cbba448.js"></script>
+      <footer>
+        <p>
+          rdmkit  <a href="/cpl.html">cpl</a><a href="/mzr.html">mzr</a><a href="/vrt.html">vrt</a><a href="/rdm.html">rdm</a><a href="/all.html">all</a><a href="/mor.html">mor</a><a href="/fun.html">fun</a><a href="/err.html">err</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
